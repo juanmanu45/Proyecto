@@ -7,7 +7,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <html lang="en">
-    <head>
+    
+    <body>
+          <head>
         <title>Home</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,8 +26,7 @@
                 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
             <link href="css/ie.css" rel="stylesheet" type="text/css">
     <![endif]-->
-    </head>
-    <body>
+  
         <!--content wrapper-->
         <div id="wrapper">
             <section>
@@ -79,6 +80,7 @@
                     </div>
                 </div>
             </section>
+        </head>
         </div>
         <script type="text/javascript" src="js/bootstrap.js"></script>
     </body>

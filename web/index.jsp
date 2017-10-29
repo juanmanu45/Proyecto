@@ -46,14 +46,14 @@
                 <div class="container">
                     <div class="menu_col">
                         <!--logo and company name-->
-                        <h1><a href="index.jsp"><img src="img/logo.png" alt=""></a></h1>
+                        <h1><a href="Sindex.jsp"><img src="img/LOGO2.1.png" alt=""></a></h1>
                         <!--menu-->	
                         <div class="navbar">
                             <div class="navbar-inner">
                                 <ul class="sf-menu">
                                     <li><a href="InsertarLibro.jsp"><img src="img/splash_icon1.png" alt="" class="menu_img"><img src="img/splash_icon1_over.png" alt="" class="menu_img_over"><div class="base_text">Insertar Libro</div><div class="num_text">01</div></a></li>
-                                    <li><a href="ListarLibros"><img src="img/splash_icon2.png" alt="" class="menu_img"><img src="img/splash_icon2_over.png" alt="" class="menu_img_over"><div class="base_text">about</div><div class="num_text">02</div></a>
-                                        <ul class="subMenu">
+                                    <li><a href="ListarLibros"><img src="img/splash_icon2.png" alt="" class="menu_img"><img src="img/splash_icon2_over.png" alt="" class="menu_img_over"><div class="base_text">Listar Libros</div><div class="num_text">02</div></a>
+                                           <ul class="subMenu">
                                             <li><a href="index-7.html">Vestibulum</a>
                                                 <ul class="subMenu2">
                                                     <li><a href="index-7.html">archive</a></li>

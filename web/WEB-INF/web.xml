@@ -8,6 +8,14 @@
         <servlet-name>ListarLibros</servlet-name>
         <servlet-class>Controladores.ListarLibros</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>Controladores.Login</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Login1</servlet-name>
+        <servlet-class>Controladores.Login1</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControlinserLibro</servlet-name>
         <url-pattern>/ControlinserLibro</url-pattern>
@@ -16,9 +24,15 @@
         <servlet-name>ListarLibros</servlet-name>
         <url-pattern>/ListarLibros</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Login1</servlet-name>
+        <url-pattern>/Login1</url-pattern>
+    </servlet-mapping>
     <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
+        <session-timeout>30</session-timeout>
     </session-config>
 </web-app>
