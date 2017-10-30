@@ -65,11 +65,13 @@
                     
                     <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="contact_submitted" value="submit" /></p>
                 </div>
-                <h2><a href="index.jsp"> volver al menu </a></h2>
                 
                 
                                      
             </form>
+            <h2><a href="index.jsp"> volver al menu </a></h2>
+            <h2><a href="ListarEmpleados"> Listar los Empleados</a></h2>
+
             <p><br>
             </p>
         

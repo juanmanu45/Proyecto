@@ -63,7 +63,7 @@
                                 <p><span>Nombre Cliente</span>
                                     <input class="contact" type="text" name="nombre" value="" /></p>
                                 <p><span>Num Empleado</span>
-                                   <input class="contact" type="text" name="numEm" value="" />
+                                    <input class="contact" type="text" name="numEm" value="" />
                                 </p>
                                 <p><span>Nombre Libro</span>
                                     <select class="contact" name="nombreLi" >
@@ -93,12 +93,13 @@
                                 </p>
                                 <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="contact_submitted" value="submit" /></p>
                             </div>
-                            <h2><a href="index.jsp"> volver al menu</a></h2>
-                            <h2><a href="InserTabla"> Listar los Libros</a></h2>
 
 
 
                         </form>
+
+                        <h2><a href="index.jsp"> volver al menu</a></h2>
+                        <h2><a href="InserTabla"> Listar los Libros</a></h2>
 
                     </div>
                 </div>
