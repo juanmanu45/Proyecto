@@ -67,4 +67,11 @@
     <session-config>
         <session-timeout>30</session-timeout>
     </session-config>
+    <welcome-file-list>
+        <welcome-file>Sindex.jsp</welcome-file>
+        
+    </welcome-file-list>
+    
+    
+    
 </web-app>

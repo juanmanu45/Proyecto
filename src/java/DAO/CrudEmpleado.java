@@ -82,7 +82,7 @@ public class CrudEmpleado {
             System.out.println("LLegue hasta aca");
             Statement statement = connection.createStatement();
 
-            ResultSet rs = statement.executeQuery("select * from Empleados");
+            ResultSet rs = statement.executeQuery("select * from Empleado");
             while (rs.next()) {
                 Empleados li = new Empleados();
                li.setNombre(rs.getString("nombre"));

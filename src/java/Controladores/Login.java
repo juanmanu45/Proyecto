@@ -91,7 +91,7 @@ public class Login extends HttpServlet {
                 System.out.println("holi llege ");
                 response.sendRedirect("index.jsp");
             } else {
-                response.sendRedirect("error.jsp");
+                response.sendRedirect("InsertarEmpleados.jsp");
                 
             }
 
