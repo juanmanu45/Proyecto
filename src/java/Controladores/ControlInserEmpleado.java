@@ -5,8 +5,9 @@
  */
 package Controladores;
 
-import DAO.CrudLibro;
-import VO.Libro;
+import DAO.CrudEmpleado;
+import VO.Empleados;
+import com.sun.corba.se.spi.protocol.RequestDispatcherDefault;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -17,9 +18,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Juan Manuel
+ * @author fernando stiven
  */
-public class ControlinserLibro extends HttpServlet {
+public class ControlInserEmpleado extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,7 +31,11 @@ public class ControlinserLibro extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-   
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -44,58 +49,40 @@ public class ControlinserLibro extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+        processRequest(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       boolean resultado = false;
-       
-        String id = request.getParameter("id");
+        processRequest(request, response);
+        boolean resultado = false;
         String nombre = request.getParameter("nombre");
-        String autor = request.getParameter("autor");
-        String edi = request.getParameter("edi");
-        String pre = request.getParameter("precio");
-        String estado = request.getParameter("estado");
-        
+        String cedula = request.getParameter("cedula");
+        String contraseña = request.getParameter("password");
+        String usuario = request.getParameter("usuario");
 
-        int id_Libro = Integer.parseInt(id);
-        int precio=Integer.parseInt(pre);
+        int cedulas = Integer.parseInt(cedula);
 
-        if (id.trim().length() > 0 && nombre.trim().length() > 0) {
+        if (contraseña.trim().length() > 0 && cedula.trim().length() > 0  ) {
             resultado = true;
-           Libro libro =new Libro(id_Libro, nombre, autor, edi, precio, estado);
-           CrudLibro c=new CrudLibro();
-           c.agregarLibro(libro);
-
-            RequestDispatcher rq = request.getRequestDispatcher("InsertarLibro.jsp");
-
+            Empleados em = new Empleados(nombre, cedulas, contraseña, usuario);
+            CrudEmpleado c = new CrudEmpleado();
+            c.agregarEmpleado(em);
+         
+            RequestDispatcher rq = request.getRequestDispatcher("InsertarEmpleados.jsp");
             if (resultado == true) {
                 request.setAttribute("resultado", true);
             } else {
                 request.setAttribute("resultado", false);
             }
-
             rq.forward(request, response);
-        } else {
-            request.setAttribute("resultado", false);
+        }else{
+           request.setAttribute("resultado", false);
         }
+
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";

@@ -16,6 +16,22 @@
         <servlet-name>Login1</servlet-name>
         <servlet-class>Controladores.Login1</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControlInserEmpleado</servlet-name>
+        <servlet-class>Controladores.ControlInserEmpleado</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CrearFactura</servlet-name>
+        <servlet-class>Controladores.CrearFactura</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VerVentas</servlet-name>
+        <servlet-class>Controladores.VerVentas</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListarEmpleados</servlet-name>
+        <servlet-class>Controladores.ListarEmpleados</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControlinserLibro</servlet-name>
         <url-pattern>/ControlinserLibro</url-pattern>
@@ -31,6 +47,22 @@
     <servlet-mapping>
         <servlet-name>Login1</servlet-name>
         <url-pattern>/Login1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControlInserEmpleado</servlet-name>
+        <url-pattern>/ControlInserEmpleado</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CrearFactura</servlet-name>
+        <url-pattern>/CrearFactura</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VerVentas</servlet-name>
+        <url-pattern>/VerVentas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarEmpleados</servlet-name>
+        <url-pattern>/ListarEmpleados</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

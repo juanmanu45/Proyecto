@@ -5,10 +5,13 @@
  */
 package Controladores;
 
+import DAO.CrudFactura;
 import DAO.CrudLibro;
+import VO.Factura;
 import VO.Libro;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -17,9 +20,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Juan Manuel
+ * @author fernando stiven
  */
-public class ControlinserLibro extends HttpServlet {
+public class CrearFactura extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,7 +33,11 @@ public class ControlinserLibro extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-   
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -44,7 +51,25 @@ public class ControlinserLibro extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+        processRequest(request, response);
+    try (PrintWriter out = response.getWriter()) {
+            RequestDispatcher rq = request.getRequestDispatcher("insertarFactura.jsp");
+
+            CrudLibro cru = new CrudLibro();
+
+            ArrayList<Libro> lis = null;
+            lis = (ArrayList<Libro>) cru.listarLibros();
+            if (lis.size() > 0) {
+
+                request.setAttribute("lis", lis);
+            } else {
+                request.setAttribute("lis", null);
+            }
+            rq.forward(request, response);
+        }
+    
+    
+    
     }
 
     /**
@@ -58,26 +83,30 @@ public class ControlinserLibro extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       boolean resultado = false;
-       
+        processRequest(request, response);
+        boolean resultado=false;
+
         String id = request.getParameter("id");
-        String nombre = request.getParameter("nombre");
-        String autor = request.getParameter("autor");
-        String edi = request.getParameter("edi");
-        String pre = request.getParameter("precio");
-        String estado = request.getParameter("estado");
-        
+        String nombreLi = request.getParameter("nombreLi");
+        String numEm = request.getParameter("numEm");
+        String cliente = request.getParameter("nombre");
 
-        int id_Libro = Integer.parseInt(id);
-        int precio=Integer.parseInt(pre);
+        int fac = Integer.parseInt(id);
+        int em = Integer.parseInt(numEm);
 
-        if (id.trim().length() > 0 && nombre.trim().length() > 0) {
-            resultado = true;
-           Libro libro =new Libro(id_Libro, nombre, autor, edi, precio, estado);
-           CrudLibro c=new CrudLibro();
-           c.agregarLibro(libro);
+        if (id.trim().length() != 0 && nombreLi.trim().length() != 0) {
 
-            RequestDispatcher rq = request.getRequestDispatcher("InsertarLibro.jsp");
+            CrudFactura cr = new CrudFactura();
+            CrudLibro cl = new CrudLibro();
+            Libro li = new Libro();
+            
+            
+            li=cl.extraerLibro(nombreLi);
+            Factura f=new Factura(cliente, nombreLi, li.getId(), fac, li.getPrecio(), em);
+            
+            cr.facturar(f);
+            
+            RequestDispatcher rq = request.getRequestDispatcher("insertarFactura.jsp");
 
             if (resultado == true) {
                 request.setAttribute("resultado", true);
@@ -86,16 +115,12 @@ public class ControlinserLibro extends HttpServlet {
             }
 
             rq.forward(request, response);
-        } else {
-            request.setAttribute("resultado", false);
+       
         }
+
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
+    
     @Override
     public String getServletInfo() {
         return "Short description";

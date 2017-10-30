@@ -102,12 +102,12 @@ public class CrudLibro {
         return users;
     }
 
-    public Libro extraerLibro(int userId) {
+     public Libro extraerLibro(String nombre) {
         Libro li = new Libro();
         try {
             PreparedStatement preparedStatement = connection.
-                    prepareStatement("select * from users where userid=?");
-            preparedStatement.setInt(1, userId);
+                    prepareStatement("select * from Libro where nombre=?");
+            preparedStatement.setString(1, nombre);
             ResultSet rs = preparedStatement.executeQuery();
 
             if (rs.next()) {
@@ -124,5 +124,6 @@ public class CrudLibro {
 
         return li;
     }
+
 
 }

@@ -66,10 +66,10 @@
                                         </ul>
                                     </li>
 
-                                    <li><a href="index-3.html"><img src="img/splash_icon3.png" alt="" class="menu_img"><img src="img/splash_icon3_over.png" alt="" class="menu_img_over"><div class="base_text">services</div><div class="num_text">03</div></a></li>
-                                    <li><a href="index-4.html"><img src="img/splash_icon4.png" alt="" class="menu_img"><img src="img/splash_icon4_over.png" alt="" class="menu_img_over"><div class="base_text">portfolio</div><div class="num_text">04</div></a></li>
-                                    <li><a href="index-5.html"><img src="img/splash_icon5.png" alt="" class="menu_img"><img src="img/splash_icon5_over.png" alt="" class="menu_img_over"><div class="base_text">blog</div><div class="num_text">05</div></a></li>
-                                    <li><a href="index-6.html"><img src="img/splash_icon6.png" alt="" class="menu_img"><img src="img/splash_icon6_over.png" alt="" class="menu_img_over"><div class="base_text">mail</div><div class="num_text">06</div></a></li>
+                                    <li><a href="InsertarEmpleados.jsp"><img src="img/splash_icon3.png" alt="" class="menu_img"><img src="img/splash_icon3_over.png" alt="" class="menu_img_over"><div class="base_text">Crear Empleados</div><div class="num_text">03</div></a></li>
+                                    <li><a href="CrearFactura"><img src="img/splash_icon4.png" alt="" class="menu_img"><img src="img/splash_icon4_over.png" alt="" class="menu_img_over"><div class="base_text">Crear Facturas</div><div class="num_text">04</div></a></li>
+                                    <li><a href="VerVentas"><img src="img/splash_icon5.png" alt="" class="menu_img"><img src="img/splash_icon5_over.png" alt="" class="menu_img_over"><div class="base_text">Ventas</div><div class="num_text">05</div></a></li>
+                                    <li><a href="ListarEmpleados"><img src="img/splash_icon6.png" alt="" class="menu_img"><img src="img/splash_icon6_over.png" alt="" class="menu_img_over"><div class="base_text">ListarEmpleados</div><div class="num_text">06</div></a></li>
 
                                 </ul>
                             </div>
